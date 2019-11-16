@@ -15,12 +15,14 @@ class FindMaxSumSubArrayOfSizeK {
             throw IllegalArgumentException("Input array is not of appropriate size.")
         }
 
-        var currentMaxSum = arr.sliceArray(start..end).sum()
+        var currentSum = arr.sliceArray(start..end).sum() // sum of 1st window
+        var currentMaxSum = currentSum // set first sum as max sum for baseline
+        end++ // update end for next window
         while (end < arr.size) {
-            val sum = arr.sliceArray(start..end).sum()
+            currentSum += arr[end] - arr[start]
 
-            if (sum > currentMaxSum) {
-                currentMaxSum = sum
+            if (currentSum > currentMaxSum) {
+                currentMaxSum = currentSum
                 result[0] = start
                 result[1] = end
             }
