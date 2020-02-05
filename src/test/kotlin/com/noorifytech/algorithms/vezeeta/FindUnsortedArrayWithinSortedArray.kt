@@ -1,4 +1,4 @@
-package com.noorifytech.algorithms
+package com.noorifytech.algorithms.vezeeta
 
 import org.junit.Assert
 import org.junit.Test
