@@ -1,4 +1,4 @@
-package com.noorifytech.kotlinplayground
+package com.noorifytech.algorithms.Google
 
 import org.junit.Assert
 import org.junit.Test
