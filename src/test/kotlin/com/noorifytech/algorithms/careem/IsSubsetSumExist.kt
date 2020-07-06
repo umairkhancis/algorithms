@@ -1,4 +1,4 @@
-package com.noorifytech.algorithms.Careem
+package com.noorifytech.algorithms.careem
 
 import org.junit.Assert
 import org.junit.Test
