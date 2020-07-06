@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.noorifytech.algorithms.FindUnsortedArrayWithinSortedArray" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-10-21T19:13:21" hostname="UmairKan.local" time="44.428">
-  <properties/>
-  <testcase name="findUnsortedArrayWithinSortedArray_" classname="com.noorifytech.algorithms.FindUnsortedArrayWithinSortedArray" time="44.428"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
