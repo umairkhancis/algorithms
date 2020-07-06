@@ -9,7 +9,7 @@ class ReverseString {
             return ""
         }
 
-        return reverse(str.slice(1 until str.lastIndex)) + str[0]
+        return reverse(str.slice(1..str.lastIndex)) + str[0]
     }
 
     @Test
@@ -22,6 +22,6 @@ class ReverseString {
         println("reversed = $result")
 
         // Assert
-        Assert.assertEquals("riamu", result)
+        Assert.assertEquals("rac", result)
     }
 }
