@@ -71,18 +71,4 @@ class LinearTimePeakFinder {
         val endTime = System.currentTimeMillis()
         println("findPeakInLinearTime took ${(endTime - startTime)} ms for the input size ${arr.size}")
     }
-
-    /**
-     * Hundred Million input size
-     */
-    @Test
-    fun test_findPeak_5() {
-        val startTime = System.currentTimeMillis()
-
-        val arr = IntArray(100000000) { it * 1 }
-        Assert.assertEquals(100000000 - 1, findPeakInLinearTime(arr.toTypedArray()))
-
-        val endTime = System.currentTimeMillis()
-        println("findPeakInLinearTime took ${(endTime - startTime)} ms for the input size ${arr.size}")
-    }
 }
