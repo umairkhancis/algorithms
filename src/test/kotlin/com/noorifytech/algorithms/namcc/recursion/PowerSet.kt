@@ -1,39 +1,53 @@
-package com.nooListtech.algorithms.namcc
+package com.noorifytech.algorithms.namcc.recursion
 
+import org.junit.Assert
 import org.junit.Test
 
 class PowerSet {
-    private fun printPowerSet(arr: IntArray) {
-        print("{")
-        printPowerSet(arr, 0, "")
-        print("}")
+    private fun powerSet(arr: IntArray): String {
+        val powerSet = generatePowerSet(arr, 0, "", StringBuilder())
+        return format(powerSet)
     }
 
-    private fun printPowerSet(arr: IntArray, inputIndex: Int, result: String) {
+    private fun generatePowerSet(arr: IntArray, inputIndex: Int, oneSet: String, finalSet: StringBuilder): String {
         if (inputIndex == arr.size) {
-            printOutput(result)
-            return
+            return format(oneSet, finalSet).toString()
         }
 
-        val op1 = result  // don't select
-        val op2 = result + arr[inputIndex] // select
+        generatePowerSet(arr, inputIndex + 1, oneSet, finalSet) // don't select
+        generatePowerSet(arr, inputIndex + 1, oneSet + arr[inputIndex], finalSet) // select
 
-        printPowerSet(arr, inputIndex+1, op1)
-        printPowerSet(arr, inputIndex+1, op2)
+        return finalSet.toString()
     }
 
-    private fun printOutput(result: String) {
-        print("{")
-        for (i in result.indices) {
-            print("${result[i]}")
-            if (i != result.length - 1)
-                print(",")
+    private fun format(powerSet: String) = "{ " + powerSet.removeRange(powerSet.length - 2, powerSet.length) + " }"
+
+    private fun format(oneSet: String, finalSet: StringBuilder): StringBuilder {
+        finalSet.append("{")
+        for (i in oneSet.indices) {
+            finalSet.append("${oneSet[i]}")
+            if (i != oneSet.length - 1)
+                finalSet.append(",")
         }
-        print("}, ")
+        finalSet.append("}, ")
+
+        return finalSet
     }
 
     @Test
     fun powerSet_case1() {
-        printPowerSet(intArrayOf(1, 2, 3))
+        val result = powerSet(intArrayOf(1, 2, 3))
+        println(result)
+        Assert.assertEquals("{ {}, {3}, {2}, {2,3}, {1}, {1,3}, {1,2}, {1,2,3} }", result)
+    }
+
+    @Test
+    fun powerSet_case2() {
+        val result = powerSet(intArrayOf(1, 2, 3, 4))
+        println(result)
+        Assert.assertEquals(
+            "{ {}, {4}, {3}, {3,4}, {2}, {2,4}, {2,3}, {2,3,4}, {1}, {1,4}, {1,3}, {1,3,4}, {1,2}, {1,2,4}, {1,2,3}, {1,2,3,4} }",
+            result
+        )
     }
 }
