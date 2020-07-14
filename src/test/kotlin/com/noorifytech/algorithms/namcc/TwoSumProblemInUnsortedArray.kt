@@ -160,6 +160,11 @@ class TwoSumProblemInUnsortedArray {
     }
 
     @Test
+    fun isPairExists_bruteForce_case24() {
+        Assert.assertFalse(isPairExistsInUnsortedArray_bruteForce(intArrayOf(6, 4, 7, 200), 14))
+    }
+
+    @Test
     fun isPairExists_optimized_case1() {
         Assert.assertFalse(isPairExistsInUnsortedArray_optimized(intArrayOf(), 0))
     }
@@ -323,5 +328,10 @@ class TwoSumProblemInUnsortedArray {
                 ), 200
             )
         )
+    }
+
+    @Test
+    fun isPairExists_optimized_case24() {
+        Assert.assertFalse(isPairExistsInUnsortedArray_optimized(intArrayOf(6, 4, 7, 200), 14))
     }
 }

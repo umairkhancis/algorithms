@@ -228,4 +228,9 @@ class TwoSumProblemInSortedArray {
             isPairExistsInSortedArray(arr, 200)
         )
     }
+
+    @Test
+    fun isPairExists_optimized_case24() {
+        Assert.assertFalse(isPairExistsInSortedArray(intArrayOf(6, 4, 7, 200), 14))
+    }
 }

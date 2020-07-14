@@ -9,24 +9,24 @@ class PowerSet {
         return format(powerSet)
     }
 
-    private fun generatePowerSet(arr: IntArray, inputIndex: Int, oneSet: String, finalSet: StringBuilder): String {
+    private fun generatePowerSet(arr: IntArray, inputIndex: Int, subSet: String, finalSet: StringBuilder): String {
         if (inputIndex == arr.size) {
-            return format(oneSet, finalSet).toString()
+            return format(subSet, finalSet).toString()
         }
 
-        generatePowerSet(arr, inputIndex + 1, oneSet, finalSet) // don't select
-        generatePowerSet(arr, inputIndex + 1, oneSet + arr[inputIndex], finalSet) // select
+        generatePowerSet(arr, inputIndex + 1, subSet, finalSet) // don't select
+        generatePowerSet(arr, inputIndex + 1, subSet + arr[inputIndex], finalSet) // select
 
         return finalSet.toString()
     }
 
     private fun format(powerSet: String) = "{ " + powerSet.removeRange(powerSet.length - 2, powerSet.length) + " }"
 
-    private fun format(oneSet: String, finalSet: StringBuilder): StringBuilder {
+    private fun format(subSet: String, finalSet: StringBuilder): StringBuilder {
         finalSet.append("{")
-        for (i in oneSet.indices) {
-            finalSet.append("${oneSet[i]}")
-            if (i != oneSet.length - 1)
+        for (i in subSet.indices) {
+            finalSet.append("${subSet[i]}")
+            if (i != subSet.length - 1)
                 finalSet.append(",")
         }
         finalSet.append("}, ")
