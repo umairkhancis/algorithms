@@ -6,9 +6,12 @@ import org.junit.Test
 class FindStringIsPalindrome {
 
     private fun isPalindrome(str: String): Boolean {
-        if (str.length <= 1) return true
-        if (str[0] != str[str.length - 1]) return false
-        return isPalindrome(str.slice(1 until str.length - 1))
+        return isPalindrome(str, start = 0, end = str.length - 1)
+    }
+
+    private fun isPalindrome(str: String, start: Int, end: Int): Boolean = when {
+        start <= end -> str[start] == str[end]
+        else -> isPalindrome(str, start + 1, end - 1)
     }
 
     @Test
