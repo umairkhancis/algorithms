@@ -74,6 +74,14 @@ class NQueens {
         placeNQueens(n = 4)
     }
 
+    @Test
+    fun placeNQueens_case_all() {
+        for (i in 1..10) {
+            println("============= FOR N = $i =============")
+            placeNQueens(n = i)
+        }
+    }
+
     private fun printBoard(board: Array<Array<Int>>) {
         for (i in 0 until board.size) {
             for (j in 0 until board.size) {
