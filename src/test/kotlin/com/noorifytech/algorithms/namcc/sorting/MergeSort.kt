@@ -24,32 +24,32 @@ class MergeSort {
         val leftArr = arr.slice(start..mid).toIntArray()
         val rightArr = arr.slice((mid + 1)..end).toIntArray()
 
-        var i = 0
-        var j = 0
-        var k = start
+        var leftIndex = 0
+        var rightIndex = 0
+        var originalIndex = start
 
-        while (i < leftArr.size && j < rightArr.size) {
-            if (leftArr[i] < rightArr[j]) {
-                arr[k] = leftArr[i]
-                i++
+        while (leftIndex < leftArr.size && rightIndex < rightArr.size) {
+            if (leftArr[leftIndex] < rightArr[rightIndex]) {
+                arr[originalIndex] = leftArr[leftIndex]
+                leftIndex++
             } else {
-                arr[k] = rightArr[j]
-                j++
+                arr[originalIndex] = rightArr[rightIndex]
+                rightIndex++
             }
 
-            k++
+            originalIndex++
         }
 
-        while (i < leftArr.size) {
-            arr[k] = leftArr[i]
-            i++
-            k++
+        while (leftIndex < leftArr.size) {
+            arr[originalIndex] = leftArr[leftIndex]
+            leftIndex++
+            originalIndex++
         }
 
-        while (j < rightArr.size) {
-            arr[k] = rightArr[j]
-            j++
-            k++
+        while (rightIndex < rightArr.size) {
+            arr[originalIndex] = rightArr[rightIndex]
+            rightIndex++
+            originalIndex++
         }
     }
 
