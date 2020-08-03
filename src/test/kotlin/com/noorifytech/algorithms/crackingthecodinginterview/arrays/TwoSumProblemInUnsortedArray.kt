@@ -1,4 +1,4 @@
-package com.noorifytech.algorithms.namcc
+package com.noorifytech.algorithms.crackingthecodinginterview.arrays
 
 import org.junit.Assert
 import org.junit.Test

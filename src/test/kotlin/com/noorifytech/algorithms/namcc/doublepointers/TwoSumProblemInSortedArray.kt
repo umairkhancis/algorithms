@@ -1,4 +1,4 @@
-package com.noorifytech.algorithms.namcc
+package com.noorifytech.algorithms.namcc.doublepointers
 
 import org.junit.Assert
 import org.junit.Test

@@ -4,26 +4,16 @@ import org.junit.Test
 
 class AllSubstring {
     private fun printAllSubStrings(str: String) {
-        for (i in str.indices) {
-            printAllSubStrings(str, i + 1, true, str[i].toString())
+        for (i in 0 until str.length) {
+            solve(str, 0, i)
         }
     }
 
-    private fun printAllSubStrings(str: String, index: Int, selected: Boolean, output: String) {
-        if (index == str.length) {
-            println(output)
-            return
-        }
-
-        val op1 = output
-        val op2 = output + str[index]
-
-        if (!selected) {
-            printAllSubStrings(str, str.length, false, op1)
-        } else {
-            printAllSubStrings(str, index + 1, false, op1)
-            printAllSubStrings(str, index + 1, true, op2)
-        }
+    private fun solve(str: String, start: Int, length: Int) {
+        if (start == str.length) return
+        val sub = str.substring(start, start + length - 1)
+        println("$sub, ${str.substring(1)}")
+        solve(str, start + 1, length)
     }
 
     @Test

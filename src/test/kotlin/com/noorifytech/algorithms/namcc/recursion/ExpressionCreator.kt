@@ -4,7 +4,8 @@ import org.junit.Test
 
 class ExpressionCreator {
     private fun createExpression(input: String, operators: List<String>) {
-        createExpression(input, 1, input.slice(0 until 1), false, operators, operators[0])
+        if (input.isEmpty()) return
+        createExpression(input, 1, input[0].toString(), false, operators, operators[0])
     }
 
     private fun createExpression(
@@ -15,6 +16,7 @@ class ExpressionCreator {
         operators: List<String>,
         operator: String
     ) {
+//        23
         if (index == input.length) {
             println("${++count} \"${output}\"")
             return
@@ -34,6 +36,11 @@ class ExpressionCreator {
     @Test
     fun createExpression_case1() {
         createExpression("123", listOf("*", "+"))
+    }
+
+    @Test
+    fun createExpression_case() {
+        createExpression("", listOf("*", "+"))
     }
 
     @Test
