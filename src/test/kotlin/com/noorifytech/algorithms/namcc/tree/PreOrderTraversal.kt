@@ -2,16 +2,14 @@ package com.noorifytech.algorithms.namcc.tree
 
 import org.junit.Test
 
-class InOrderTraversal {
-    // Left Node, Curr Node, Right Node
-    private fun inOrder(node: BNode<Int>?) {
-        if (node == null) {
-            return
-        }
+class PreOrderTraversal {
+    // Curr Node, Left Node, Right Node
+    private fun preOrder(node: BNode<Int>?) {
+        if (node == null) return
 
-        inOrder(node.left)
         print(" ${node.data} ")
-        inOrder(node.right)
+        preOrder(node.left)
+        preOrder(node.right)
     }
 
     @Test
@@ -46,7 +44,7 @@ class InOrderTraversal {
             )
         )
 
-        inOrder(root)
+        preOrder(root)
     }
 
     @Test
@@ -105,6 +103,6 @@ class InOrderTraversal {
             )
         )
 
-        inOrder(root)
+        preOrder(root)
     }
 }

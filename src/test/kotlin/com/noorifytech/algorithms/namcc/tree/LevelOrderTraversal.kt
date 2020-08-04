@@ -1,17 +1,24 @@
 package com.noorifytech.algorithms.namcc.tree
 
 import org.junit.Test
+import java.util.*
 
-class InOrderTraversal {
-    // Left Node, Curr Node, Right Node
-    private fun inOrder(node: BNode<Int>?) {
+class LevelOrderTraversal {
+
+    private fun levelOrder(node: BNode<Int>?) {
         if (node == null) {
             return
         }
 
-        inOrder(node.left)
-        print(" ${node.data} ")
-        inOrder(node.right)
+        val queue: Deque<BNode<Int>> = LinkedList()
+        queue.offer(node)
+        while (queue.isNotEmpty()) {
+            val currNode = queue.first
+            if (currNode.left != null) queue.offer(currNode.left)
+            if (currNode.right != null) queue.offer(currNode.right)
+
+            print(" ${queue.poll().data} ")
+        }
     }
 
     @Test
@@ -46,7 +53,7 @@ class InOrderTraversal {
             )
         )
 
-        inOrder(root)
+        levelOrder(root)
     }
 
     @Test
@@ -105,6 +112,6 @@ class InOrderTraversal {
             )
         )
 
-        inOrder(root)
+        levelOrder(root)
     }
 }
