@@ -2,19 +2,34 @@ package com.noorifytech.algorithms.noorifytech
 
 import org.junit.Test
 
-// Why is recursion =
+// Why recursion exist =
 // What is recursion = function calling it self.
-// Anything that can be solved using loops, can also be solved using recursion.
+// Anything that can be solved using loops, can also be solved using recursion and vice versa.
 
 // Recursion has its upsides and downsides as well.
 // Everything in computer science is a trade-off.
 
 // - Upsides: Code is concise, code is easier to read, solution designing becomes easy, Hard to introduce bug, it is also fun, it is also cool.
-// - Downsides: Hard to understand in begining, Hard to debug, less performant than iterative solution
+// - Downsides: Hard to understand in beginning, Hard to debug, less performant than iterative solution
 
 // Methods to solve recursive problems
 // - Induction BaseCase Hypothesis = IBH => Small Input
 // - Input Output Method = IP-OP => Decision Making
+
+
+// Power Set Problem
+// A = { a, b, c}
+// P(A) = {{}, {a}, {b}, {c}, {a, b}, {a, c}, {b, c}, {a, b, c}}
+
+
+
+
+
+
+
+
+
+
 class IntroToRecursion {
 
     /**

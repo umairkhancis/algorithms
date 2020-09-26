@@ -4,7 +4,7 @@ import org.junit.Test
 
 class InOrderTraversal {
     // Left Node, Curr Node, Right Node
-    private fun inOrder(node: BNode<Int>?) {
+    fun inOrder(node: BNode<Int>?) {
         if (node == null) {
             return
         }

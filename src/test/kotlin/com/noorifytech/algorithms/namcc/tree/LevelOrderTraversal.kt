@@ -5,7 +5,7 @@ import java.util.*
 
 class LevelOrderTraversal {
 
-    private fun levelOrder(node: BNode<Int>?) {
+    fun levelOrder(node: BNode<Int>?) {
         if (node == null) {
             return
         }
